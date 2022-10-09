@@ -47,7 +47,7 @@ export function JoinArgsFromIndex(Arr: Array<string>, Index: number) {
         Filtered.insert(ci, Arr[i]);
         
         ci++;
-    } // filter the elements from index to size for .join();
+    } // filter the elements from index to size for .join()
 
     return Filtered.join(" ");
 }
