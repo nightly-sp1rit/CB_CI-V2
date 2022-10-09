@@ -1,6 +1,7 @@
 import { CommandGlobals } from "./Globals";
-import { GetDate, IsStringPlayer, SendError } from "./Utilities";
+import { GetDate, IsStringPlayer, JoinArgsFromIndex, SendError } from "./Utilities";
 
+const NEWLINE = "\n";
 
 export class CommandParser {
     public Parse(Sender: Player, Message: string) {
@@ -28,16 +29,18 @@ export class CommandParser {
                                 return;
                             }
 
-                            if (CommandGlobals.AllowSelfKick == false && Player === Sender) {
+                            const IPlayer = Player as Player;
+
+                            if (CommandGlobals.AllowSelfKick === false && Player === Sender) {
                                 SendError("You're not allowed to kick yourself!");
 
                                 return;
                             }
 
                             if (Args[2] === undefined || Args[2].size() < 3) {
-                                const IPlayer = Player as Player;
-
                                 IPlayer.Kick(CommandGlobals.KickMessageB + " No Reason was specified\n" + GetDate());
+                            } else {
+                                IPlayer.Kick(CommandGlobals.KickMessageB + " Reason: " + JoinArgsFromIndex(Args, 2) + ". " + GetDate());
                             }
                         } else {
                             SendError("Please specify a Player when running /kick! Argument 2 was not found");

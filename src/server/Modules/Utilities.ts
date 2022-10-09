@@ -31,3 +31,23 @@ export function GetDate() {
 
     return M10Add0(Date.hour) + ":" + M10Add0(Date.min) + " " + M10Add0(Date.day) + "/" + M10Add0(Date.month) + "/" + Date.year;
 }
+
+export function JoinArgsFromIndex(Arr: Array<string>, Index: number) {
+    if (Index > Arr.size() || Index < 0) {
+        error("???");
+
+        return;
+    }
+
+    let Filtered: Array<string> = [];
+
+    let ci = 0;
+
+    for (let i = Index; i < Arr.size(); i++) {
+        Filtered.insert(ci, Arr[i]);
+        
+        ci++;
+    } // filter the elements from index to size for .join();
+
+    return Filtered.join(" ");
+}
