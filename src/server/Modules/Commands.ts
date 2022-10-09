@@ -1,5 +1,5 @@
 import { CommandGlobals } from "./Globals";
-import { IsStringPlayer, SendError } from "./Utilities";
+import { GetDate, IsStringPlayer, SendError } from "./Utilities";
 
 
 export class CommandParser {
@@ -24,9 +24,25 @@ export class CommandParser {
 
                             if (Player === undefined) {
                                 SendError("Player specified in /kick was not found!");
+
+                                return;
+                            }
+
+                            if (CommandGlobals.AllowSelfKick == false && Player === Sender) {
+                                SendError("You're not allowed to kick yourself!");
+
+                                return;
+                            }
+
+                            if (Args[2] === undefined || Args[2].size() < 3) {
+                                const IPlayer = Player as Player;
+
+                                IPlayer.Kick(CommandGlobals.KickMessageB + " No Reason was specified\n" + GetDate());
                             }
                         } else {
                             SendError("Please specify a Player when running /kick! Argument 2 was not found");
+
+                            return;
                         }
 
                         break;
