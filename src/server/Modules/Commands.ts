@@ -1,5 +1,5 @@
 import { CommandGlobals } from "./Globals";
-import { SendError } from "./Utilities";
+import { IsStringPlayer, SendError } from "./Utilities";
 
 
 export class CommandParser {
@@ -20,7 +20,11 @@ export class CommandParser {
                         break;
                     case "kick":
                         if (Args[1] !== undefined) {
-                            
+                            const Player: Player | undefined = IsStringPlayer(Args[1]);
+
+                            if (Player === undefined) {
+                                SendError("Player specified in /kick was not found!");
+                            }
                         } else {
                             SendError("Please specify a Player when running /kick! Argument 2 was not found");
                         }
