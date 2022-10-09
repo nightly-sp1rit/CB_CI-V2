@@ -51,3 +51,15 @@ export function JoinArgsFromIndex(Arr: Array<string>, Index: number) {
 
     return Filtered.join(" ");
 }
+
+export function GetPlayerCharacter(Player: Player): Model {
+    let WCharacter: Model | undefined = undefined;
+
+    if (Player.Character === undefined) {
+        WCharacter = Player.CharacterAdded.Wait()[0]
+    } else {
+        WCharacter = Player.Character
+    }
+
+    return WCharacter as Model;
+}
