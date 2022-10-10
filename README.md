@@ -17,6 +17,20 @@ To install roblox-ts follow the instructions given on https://roblox-ts.com/
 
 ---
 
+## Commands
+
+| Command Name | Syntax | Description |
+|--------------|--------|-------------|
+| /log | /log {Message: string} | Logs / Prints a Message to the Output (FILTERED) |
+| /time | /time {ClockTime: number} | Sets the current ClockTime of the Server |
+| /reset | /reset {(optional) Player: string} | Resets your or other's characters |
+| /kick | /kick {Player: string} {(optional) Reason: string} | Kicks a Player optionally giving a reason |
+| /ignite | /ignite {(optional) Player: string} | Ignite yourself or others |
+| /barbecue | /barbecue {(optional) Player: string} | Smoke yourself or others |
+| /sparkles | /sparkles {(optional) Player: string} | Turn yourself or others into a glitter bomb |
+| /zombify | /zombify {(optional) Player: string} | Turn into a Zombie |
+
+Player is found by matching the Input to the NAME or DISPLAYNAME of a Player
 ## Customizing
 
 The module and its aspects are fully customizable and you can find settings in Global.ts!
