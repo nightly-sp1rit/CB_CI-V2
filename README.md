@@ -17,6 +17,12 @@ To install roblox-ts follow the instructions given on https://roblox-ts.com/
 
 ---
 
+## Customizing
+
+The module and its aspects are fully customizable and you can find settings in Global.ts!
+
+Please do not delete properties as the Module depends on all of them.
+
 ## Contributing
 
 Feel free to copy, share, edit the repository as much as you want. If you have any ideas or fix for specific code just make an issue and I'll review it once I'm available to!
