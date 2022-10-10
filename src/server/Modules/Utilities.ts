@@ -8,7 +8,7 @@ export function IsStringPlayer(Input: string): Player | undefined {
     let FoundPlayer: Player | undefined;
 
     game.GetService("Players").GetPlayers().forEach((Player, i) => {
-        if (Player.Name.lower().find(Input)[0] !== undefined || Player.DisplayName.lower().find(Input)[0] !== undefined) {
+        if (Player.Name.lower().find(Input.lower())[0] !== undefined || Player.DisplayName.lower().find(Input.lower())[0] !== undefined) {
             FoundPlayer = Player;
         }
     });
