@@ -33,9 +33,7 @@ To install roblox-ts follow the instructions given on https://roblox-ts.com/
 Player is found by matching the Input to the NAME or DISPLAYNAME of a Player
 ## Customizing
 
-The module and its aspects are fully customizable and you can find settings in Global.ts!
-
-Please do not delete properties as the Module depends on all of them.
+Command Effects along with all settings for the Module are fully customizable and the Settings object (CommandGlobals) can be found in [Globals.ts](https://github.com/ilie-alessandro/CB_CI-V2/blob/master/src/server/Modules/Globals.ts)
 
 ## Contributing
 
